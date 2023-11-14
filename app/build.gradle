@@ -5,7 +5,7 @@ plugins {
 android {
     compileSdk 33
     defaultConfig {
-        applicationId "ml.docilealligator.infinityforreddit"
+        applicationId "ml.docilealligator.mugen"
         minSdk 21
         targetSdk 33
         versionCode 160
@@ -17,8 +17,17 @@ android {
             }
         }
     }
+    signingConfigs {
+        release {
+            storeFile file("Infinity.jks")
+            storePassword "Infinity"
+            keyAlias "Infinity"
+            keyPassword "Infinity"
+        }
+    }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
